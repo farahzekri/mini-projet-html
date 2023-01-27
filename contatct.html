@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <metal name="viewport" contente="width=device-width, initial-scale=1.0"></metal>
+    <link rel="stylesheet" href="contact.css">
+    <title> PROTFOLIO FARAH </title>
+    </head>
+    <body>
+        <div id="header">
+        <div class="contenier">
+            <nav>
+                <img src="logo.png" class="logo">
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="Aboutme.html">ABOUT ME</a></li>
+                    <li><a href="experience&skils.html">EXPERIENCE && SKILS</a>
+                    <li><a href="contatct.html">CONTACT</a>
+                </ul>
+            </nav>
+        </div>
+        <div id="contact">
+        <div class="carte">
+            <img src="farah2.jpg">
+            <h3>FARAH ZEKRI</h3>
+            <p>Future Engineer</p>
+            <div class="reseau">
+                <a href="https://www.linkedin.com/in/zekri-farah-432891208/"><img src="iconelinkidine.png"></a>
+                <a href="https://www.facebook.com/"><img src="iconefacbook.png"></a>
+                <a href="https://www.instagram.com/?hl=fr"><img src="instagrame.png"></a>
+            </div>
+            <div class="info">
+            <table>
+                <tr>
+                    <td><img src="iconetel.png" ><b>99637892</b></td>
+                    <td><img src="adresse.png"><b>Cité olympique, Tunis</b></td>
+                </tr>
+            </table>
+        </div><br>
+           <div class="send">
+             <h3>Send A Message:</h3>
+             <form>
+                <div>
+                <label>FULL NAME:</label><br>
+                <input type="text" id="inputname" name="nom" placeholder="From 3 to 12 characters"><br><p id="mesg1"></p><br>
+                <label>EMAIL:</label><br>
+                <input type="text" id="inptemeil" placeholder="mail@serveur.com"><br><p id="mesg2"></p><br>
+                <label>Your Message:</label><br>
+                <textarea placeholder="write your message"></textarea><br><br>
+                <input type="button" id="buttonval" value="to validate " onclick="validepass()"><br>
+                <a href="" type="button" class="bt" id="btn" onclick="validationform()" >Contact me</a>
+                <p id="demo" style="color: aliceblue;"></p>
+
+           </div>
+        </div>
+    </div>
+        </div>
+        <script>
+            var name=document.getElementById("inputname").value;
+            var  email=document.getElementById("inptemeil").value;
+          
+             
+              function validepass(){
+                document.getElementById("buttonval").addEventListener("click", function() {
+                 
+                  if ((name.length<3) || (name.length>12)) {
+                    mesg1.textContent = "From 3 to 12 characters"
+                    mesg1.style.color = "red" }
+                  else if(name.length==0){
+                    mesg1.textContent = "you have to enter something"
+                    mesg1.style.color = "red" 
+                  } 
+                  
+                  if (email.length==0){
+                    mesg2.textContent = "you have to enter something"
+                    mesg2.style.color = "red" 
+                  }
+                
+                /* if (email.match(/[@-.]/i)){
+                    mesg2.textContent = "email validex"
+                    mesg2.style.color = "red"
+
+                 }*/
+                
+                });
+
+              }
+            function validationform(){
+                
+                let text = "you really want to send this message?";
+                     if (confirm(text) == true) {
+                      text = "send successfully";
+                          } 
+                     else {
+                              text= "Message cancellation";}
+                              document.getElementById("demo").innerHTML= text;
+
+
+                
+            }
+          
+
+        </script>
+    </body>
+
+</html>
